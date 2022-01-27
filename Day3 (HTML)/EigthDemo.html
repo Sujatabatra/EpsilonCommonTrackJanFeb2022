@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Form Tag Demonstration</title>
+</head>
+<body>
+    <h1>Enter Employee Details</h1>
+    <!--default method is get-->
+    <form action="./myServerResource" method="get">
+        Enter Employee ID : <input type="text" name="empId"><br><br>
+        
+        Enter Employee Name : <input type="text" name="empName"><br><br>
+        
+        Enter Employee Password : <input type="password" name="empPwd"><br><br>
+        
+        Select Gender : <input type="radio" name="empGender" value="M">Male
+        <input type="radio" name="empGender" value="F">Female<br><br>
+        
+        Select Hobbies : <input type="checkbox" name="empHobbies" value="Read">Reading 
+        <input type="checkbox" name="empHobbies" value="Travel">Travelling
+        <input type="checkbox" name="empHobbies" value="Cooking">Cooking
+        <input type="checkbox" name="empHobbies" value="Picture Clicking">Photography<br><br>
+       
+        <input type="submit" value="Save Employee">
+    </form>
+</body>
+</html>
