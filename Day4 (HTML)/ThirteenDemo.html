@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function showResult() {            
+        x = document.forms["myform"]["newinput"].value;            
+        document.forms["myform"]["result"].value = "Welcome "+x;      
+   } 
+    </script>
+</head>
+<body>    
+
+    <form action = "/myServerResource" method = "get" name = "myform">       
+       Enter a value : <input type = "text" name = "newinput" />        
+       <input type = "button" value = "Result"  onclick = "showResult();" />
+       <!--Logically telling browser is it output field-->        
+       <output name = "result"></output>      
+      </form>		
+      
+</body>
+</html>
