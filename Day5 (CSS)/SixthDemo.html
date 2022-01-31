@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[type="text"]{
+            background-color: darkturquoise;
+        }
+        input[required]{
+            background-color: firebrick;
+        }
+    </style>
+</head>
+<body>
+    <h1>attribute selector</h1>
+    <form action="./myServerResource">
+        Enter Name : <input type="text" name="name"><br><br>
+        Enter password : <input type="password" name="pwd" required><br><br>
+        Enter Designation : <input type="text" name="desig"><br><br>
+        Enter Department : <input type="text" name="deptt"><br><br>
+        
+        Enter Date of Birth : <input type="date" name="dob" required>
+
+        Select Salary Range : <select name="salary">
+            <option value="A">10000-15000</option>
+            <option value="B">15001-25000</option>
+            <option value="C">25001-35000</option>
+        </select>
+        <input type="submit" value="click me">
+    </form>
+</body>
+</html>
