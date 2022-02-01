@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demonstrating Positioning</title>
+    <style>
+        /*
+        relative position mean relative wrt to the actual location
+        */
+        #parent{
+
+        }
+        #child-one{
+            position: relative;
+            left: 10px;
+            top: 10px;
+        }
+        #child-two{
+            /* position: relative;
+            top:10px */
+        }
+        #child-three{
+            /* position:relative;
+            top: 10px; */
+        }
+
+    </style>
+</head>
+<body>
+    <div id="parent" style="background-color: tan;height: 50px;padding: 20px;">
+        <div id="child-one" style="background-color: tomato">One</div>
+        <div id="child-two" style="background-color: skyblue;">Two</div>
+        <div id="child-three" style="background-color: springgreen;">Three</div>
+    </div>
+</body>
+</html>
