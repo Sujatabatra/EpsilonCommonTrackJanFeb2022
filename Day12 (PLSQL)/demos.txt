@@ -1,0 +1,30 @@
+DECLARE
+    v_empId number:= :id;
+BEGIN
+   delete from employees
+   where employee_id=v_empId;
+   IF SQL%FOUND THEN
+     DBMS_OUTPUT.PUT_LINE('Employee Deleted Succesfully');
+   ELSE
+     DBMS_OUTPUT.PUT_LINE('Employee Deletion FAILED');
+   END IF;
+END;
+===================================================================================================
+DECLARE
+     --declaration of cursor
+     CURSOR deptt_emp_cur IS SELECT * from employees where department_id=50;
+
+     empRec employees%ROWTYPE;
+BEGIN
+     -- open cursor
+     OPEN deptt_emp_cur;
+     LOOP
+        --fetch the result
+        FETCH deptt_emp_cur into empRec;
+        --check if cursor have more records
+        EXIT WHEN deptt_emp_cur%NOTFOUND;
+        DBMS_OUTPUT.PUT_LINE('employee id : '|| empRec.employee_id||' , Employee Name : '||empRec.first_name);
+     END LOOP;
+     --close cursor
+     CLOSE deptt_emp_cur;
+END;
