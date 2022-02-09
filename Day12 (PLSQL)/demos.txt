@@ -96,3 +96,35 @@ BEGIN
      END LOOP;
      CLOSE c_emp;
 END;
+==========================================================================================
+CREATE OR REPLACE PROCEDURE CheckComission
+IS
+     v_commission number;
+BEGIN
+     select commission_pct into v_commission from employees where employee_id=101; 
+       IF v_commission IS NULL 
+       THEN
+           RAISE_application_error(-20000,'No Commision Earned....');
+       ELSE
+           DBMS_OUTPUT.PUT_LINE('Comission Earned : '||v_commission);
+       END IF;
+END;
+
+---------------------------------------------------------
+BEGIN
+CheckComission;
+EXCEPTION
+WHEN OTHERS THEN
+DBMS_OUTPUT.PUT_LINE('SOMETHING WENT WRONG');
+END;
+---------------------------------------------------------
+DECLARE
+    commission_exception EXCEPTION;
+    PRAGMA EXCEPTION_INIT(commission_exception,-20000);
+BEGIN
+    CheckComission;
+EXCEPTION
+    WHEN commission_exception THEN
+       DBMS_OUTPUT.PUT_LINE('No Commission Earned By The Employee');
+END;
+===================================================================================
